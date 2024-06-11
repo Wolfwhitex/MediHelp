@@ -1,0 +1,204 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  /* navbar */
+
+  .mamura-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #000000;
+    background-color: #ffffff;
+    text-align: center;
+  }
+  
+  .vertical-line {
+    width: 4px;
+    height: 100px;
+    background-color: #a5c422;
+    margin: auto;
+  }
+  
+  .info_section {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 50px 0;
+  }
+  
+  .info_contact h4, .info_link_box h4 {
+    margin-bottom: 20px;
+  }
+  
+  .info_section h4 {
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  .info_section .info_col {
+    margin-bottom: 30px;
+  }
+  
+  .contact_link_box a {
+    display: flex;
+    align-items: center;
+    color: #000000;
+    margin-bottom: 10px;
+    text-decoration: none;
+  }
+  
+  .contact_link_box a i {
+    margin-right: 10px;
+  }
+  
+  .info_links a {
+    display: block;
+    margin-bottom: 10px;
+    color: #000000;
+    text-decoration: none;
+  }
+  
+  .info_links a.active {
+    font-weight: bold;
+  }
+  
+  .info_section .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Adjust the gap between columns if needed */
+  }
+  
+  .info_section .info_contact .contact_link_box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  
+  .info_section .info_contact .contact_link_box a {
+    margin: 5px 0;
+    color: #000000;
+  }
+  
+  .info_section .info_contact .contact_link_box a i {
+    margin-right: 5px;
+  }
+  
+  .info_section .info_contact .contact_link_box a:hover {
+    color: #a5c422;
+  }
+  
+  .info_section .info_social {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .info_section .info_social a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: #000000;
+    border-radius: 100%;
+    margin-right: 10px;
+    font-size: 24px;
+  }
+  
+  .info_section .info_social a:hover {
+    color: #a5c422;
+  }
+  
+  .info_section .info_links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  
+  .info_section .info_links a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 15px;
+    color: #000000;
+  }
+  
+  .info_section .info_links a:hover {
+    color: #a5c422;
+  }
+  
+  .info_section form input {
+    border: none;
+    border-bottom: 1px solid #000000;
+    background-color: transparent;
+    width: 100%;
+    height: 45px;
+    color: #000000;
+    outline: none;
+  }
+  
+  .info_section form input::-webkit-input-placeholder {
+    color: #000000;
+  }
+  
+  .info_section form input:-ms-input-placeholder {
+    color: #000000;
+  }
+  
+  .info_section form input::-ms-input-placeholder {
+    color: #000000;
+  }
+  
+  .info_section form input::placeholder {
+    color: #000000;
+  }
+  
+  .info_section form button {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    padding: 10px 55px;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 0;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    border: none;
+    margin-top: 15px;
+  }
+  
+  .info_section form button:hover {
+    background-color: #a5c422;
+  }
+  
