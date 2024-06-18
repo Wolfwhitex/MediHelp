@@ -17,11 +17,12 @@
         <!-- MENU LINKS -->
         <div class="collapse navbar-collapse">
              <ul class="nav navbar-nav navbar-right">
-                  <li><a href="{{ url('/home') }}" class="smoothScroll">Home</a></li>
-                  <li><a href="{{ url('/saranobat') }}" class="smoothScroll">Saran Obat</a></li>
-                  <li><a href="{{ url('/apotek') }}" class="smoothScroll">Apotek</a></li>
-                  <li><a href="{{ url('/konsultasi') }}" class="smoothScroll">Konsultasi</a></li>
-                  <li class="appointment-btn"><a href="#appointment">Login</a></li>
+               <li><a href="{{ url('/home') }}" class="smoothScroll">Home</a></li>
+               <li><a href="{{ url('/saranobat') }}" class="smoothScroll">Saran Obat</a></li>
+               <li><a href="{{ url('/apotek') }}" class="smoothScroll">Apotek</a></li>
+               <li><a href="{{ url('/konsultasi') }}" class="smoothScroll">Konsultasi</a></li>
+               <li><a href="{{ url('/transaksi') }}" class="smoothScroll">Pesan</a></li>
+                  <li class="appointment-btn"><a href="{{url('logout')}}" class="btn btn-outline-success" type="submit">Logout</a></li>
              </ul>
         </div>
    </div>
@@ -38,15 +39,16 @@
                          <table>
                               <tr>
                                 <th>Nama Obat</th>
-                                <th>Keterangan</th>
+                                <th>Harga</th>
                                 <th>qty</th>
                               </tr>
+                              @foreach ($obatapotek as $item)
                               <tr>
-                                <td>Paracetamol</td>
-                                <td>Meredakan demam</td>
-                                <td>2 dus</td>
+                                <td>{{$item->Namaobat}}</td>
+                                <td>{{$item->Hargaobat}}</td>
+                                <td>{{$item->Stokobat}}</td>
                               </tr>
-                              
+                              @endforeach
                             </table>
                             
 

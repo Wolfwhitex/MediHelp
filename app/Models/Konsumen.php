@@ -10,8 +10,7 @@ class Konsumen extends Authenticatable
     use HasFactory;
     protected $table = 'konsumen';
 
-    protected $fillable = [
-        'username', 'name', 'umur', 'alamat', 'notelpon', 'email', 'password',
+    protected $fillable = ['username', 'name', 'umur', 'alamat', 'notelpon', 'email', 'password',
     ];
 
     protected $hidden = [

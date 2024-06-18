@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,8 +11,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('konsultan', function (Blueprint $table) {
+            // $table->string('KonsultanID')->primary();
             $table->id();
-            $table->string('KonsultanID');
             $table->string('Nama');
             $table->string('Spesialisasi');
             $table->string('NoTelepon');

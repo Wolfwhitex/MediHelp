@@ -9,5 +9,10 @@ class apotek extends Model
 {
     use HasFactory;
     protected $table = 'apotek';
-    protected $fillable = ['ID_Apotek','Nama_Apotek','Lokasi','Jam_Buka','Obat',];
+    protected $fillable = ['Nama_Apotek','Lokasi','Jam_Buka'];
+
+    public function obatapotek()
+    {
+        return $this->hasMany(Obatapotek::class);
+    }
 }

@@ -1,4 +1,4 @@
-{{-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -72,6 +72,7 @@
                     <a href="{{ url('/saranobat') }}">Saran Obat</a>
                     <a href="{{ url('/apotek') }}">Apotek</a>
                     <a href="{{ url('/konsultasi') }}">Konsultasi</a>
+                    <a href="{{ url('/transaksi') }}">Pesan</a>
                   </div>
                 </div>
               </div>
@@ -93,37 +94,4 @@
 
 </body>
 @yield('content')
-</html> --}}
-
-<html>
-    <head>
-        <title>@yield('title')</title>
-    </head>
-    <body>
-        @section('header')
-            <a href="{{ route('user.index') }}">Home</a>
-        
-        
-        @if(Session::has('flash_message'))
-			<div style="color:green; border:1px solid #aaa; padding:4px; margin-top:10px">
-				{{ Session::get('flash_message') }}
-			</div>
-		@endif
-
-		@if($errors->any())
-			<div style="color:red; border:1px solid #aaa; padding:4px; margin-top:10px">
-				@foreach($errors->all() as $error)
-					<p>{{ $error }}</p>
-				@endforeach
-			</div>
-		@endif
-		
-        <div>			
-            @yield('content')
-        </div>
-        
-        <div>
-			Footer @ 2016
-		</div>	
-    </body>
 </html>

@@ -47,10 +47,11 @@ class KonsultasiResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('KonsultanID')->sortable(),
+                TextColumn::make('Konsultan.Spesialisasi')->sortable(),
                 TextColumn::make('Nama'),
-                TextColumn::make('jadwal')->sortable(),
                 TextColumn::make('Konsultasi'),
+                TextColumn::make('jadwal')->sortable(),
+                
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('updated_at')

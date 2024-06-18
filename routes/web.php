@@ -3,7 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KonsultasiController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ObatController;
+use App\Http\Controllers\ApotekController;
+use App\Http\Controllers\TransactionController;
+//use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,19 +24,14 @@ Route::get('/', function () {
 
 Route::get('/home', function () {
     return view('home');
-});
+})->middleware('auth')->name('home');
 
-// Route::get('home', function () {
-//     return view('home');
-// })->middleware('auth');
+// Route::get('/saranobat', function () {
+//     return view('saranobat');
+// });
 
-
-Route::get('/saranobat', function () {
-    return view('saranobat');
-});
-
-Route::get('/hasilsaran', function () {
-    return view('hasilsaran');
+Route::get('/formsaran', function () {
+    return view('formsaran');
 });
 
 Route::get('/konsultasi', function () {
@@ -44,19 +42,11 @@ Route::get('/apotek', function () {
     return view('apotek');
 });
 
-Route::get('/obatapotek', function () {
-    return view('obatapotek');
-});
 
-// Route::get('/konsultasi/create', [KonsultasiController::class, 'create'])->name('konsultasi.create');
-// Route::post('/konsultasi/store', [KonsultasiController::class, 'store'])->name('konsultasi.store');
+Route::get('/obatapotek', [ApotekController::class, 'show']);
 
 // Route::view('registerform', 'register')->name('register');
 // Route::POST('datasubmit',[RegisterController::class, 'datasubmit']);
-
-// Route::get('/register', function () {
-//     return view('register');
-// })->name('register');
 
 // Route::post('/register', [RegisterController::class, 'datasubmit'])->name('datasubmit');
 
@@ -66,51 +56,30 @@ Route::get('/obatapotek', function () {
 
 // Route::post('/login', [RegisterController::class, 'login'])->name('login');
 
-Route::get('/home', function () {
-    return view('home');
-})->middleware('auth')->name('home');
+Route::get('/konsultasi', [KonsultasiController::class, 'create'])->name('konsultasi.create');
+Route::post('/konsultasi', [KonsultasiController::class, 'store'])->name('konsultasi.store');
 
-// Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
-// Route::post('/register', [AuthController::class, 'register']);
 
-// Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
-// Route::post('/login', [AuthController::class, 'login']);
-
-// Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-
-// Route::get('/home', function () {
-//     return view('home');
-// })->middleware('auth:konsumen');
-
-Route::get('/login', function(){
-    return view('login');
-})->name('login');
-
-Route::get('/register', function(){
-    return view('register');
+Route::get('/register', function () {
+    return view('auth.register');
 })->name('register');
 
-// Route::post('/authenticate', [RegisterController::class, 'authenticate']);
+Route::post('/register', [RegisterController::class, 'register'])->name('register.post');
 
-// Route::get('/logout', [RegisterController::class, 'logout']);
+Route::get('/login', function () {
+    return view('auth.login');
+})->name('login');
 
+Route::post('/login', [RegisterController::class, 'authenticate'])->name('login.post');
 
-// Route::get('/register',
-// [RegisterController::class,'register']);
+Route::get('/logout', [RegisterController::class, 'logout'])->name('logout');
 
-// // Route::get('home',
-// // [MainController::class,'HomePage']);
+// Route::get('/saranobat', [ObatController::class, 'saranObatForm'])->name('saran.obat');
+// Route::post('/saranobat', [ObatController::class, 'saranObat'])->name('saran.obat.result');
 
-// Route::get('/konsultasi', [KonsultasiController::class, 'index'])->name('konsultasi');
+Route::get('/search', [ObatController::class, 'search']);
+Route::get('/saranobat', [ObatController::class, 'saranobat'])->name('saranobat');
 
-// Route::get('/konsultasi', [KonsultasiController::class, 'create'])->name('konsultasi.create');
-// Route::post('/konsultasi', [KonsultasiController::class, 'store'])->name('konsultasi.store');
-
-
-Route::get('konsumen', array('as' => 'konsumen.index', 'uses' => 'RegisterController@index'));
-Route::get('konsumen/register', array('as' => 'konsumen.register', 'uses' => 'RegisterController@register'));
-Route::post('konsumen/store', array('as' => 'konsumen.store', 'uses' => 'RegisterController@store'));
-Route::get('konsumen/login', array('as' => 'konsumen.login', 'uses' => 'RegisterController@login'));
-Route::post('konsumen/authenticate', array('as' => 'konsumen.authenticate', 'uses' => 'RegisterController@authenticate'));
-Route::get('konsumen/logout', array('as' => 'konsumen.logout', 'uses' => 'RegisterController@logout'));
-Route::get('konsumen/account', array('as' => 'konsumen.account', 'uses' => 'RegisterController@account'))->middleware('auth');
+// routes/web.php
+Route::get('/transaksi', [TransactionController::class, 'create'])->name('transaction.create');
+Route::post('/transaksi', [TransactionController::class, 'store'])->name('transaction.store');

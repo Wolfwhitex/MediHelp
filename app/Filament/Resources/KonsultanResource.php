@@ -23,9 +23,9 @@ class KonsultanResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('KonsultanID')
-                    ->required()
-                    ->maxLength(255),
+                // Forms\Components\TextInput::make('KonsultanID')
+                //     ->required()
+                //     ->maxLength(255),
 
                 Forms\Components\TextInput::make('Nama')
                     ->required()
@@ -51,7 +51,7 @@ class KonsultanResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('KonsultanID')->sortable()->searchable(),
+                // Tables\Columns\TextColumn::make('KonsultanID')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('Nama'),
                 Tables\Columns\TextColumn::make('Spesialisasi')->searchable(),
                 Tables\Columns\TextColumn::make('NoTelepon'),

@@ -13,11 +13,9 @@ return new class extends Migration
     {
         Schema::create('apotek', function (Blueprint $table) {
            $table->id();
-            $table->string("ID_Apotek");
             $table->string("Nama_Apotek");
             $table->string("Lokasi");
             $table->string("Jam_Buka");
-            $table->string("Obat");
             $table->timestamps();
         });
     }

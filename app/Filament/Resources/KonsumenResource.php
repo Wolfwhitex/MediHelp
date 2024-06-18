@@ -28,16 +28,17 @@ class KonsumenResource extends Resource
                 ->maxLength(255),
                 Forms\Components\TextInput::make('name')
                 ->required()
-                ->numeric(),
+                ->maxLength(255),
                 Forms\Components\TextInput::make('umur')
                 ->required()
-                ->maxLength(100),
+                ->numeric(),
                 Forms\Components\TextInput::make('alamat')
                 ->required()
                 ->maxLength(255),
                 Forms\Components\TextInput::make('notelpon')
                 ->required()
-                ->numeric(),
+                ->tel()
+                ->maxLength(15),
                 Forms\Components\TextInput::make('email')
                 ->required()
                 ->email()
